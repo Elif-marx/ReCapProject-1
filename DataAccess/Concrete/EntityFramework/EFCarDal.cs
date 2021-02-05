@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EntityFrameworkCarDal : ICarDal
+    public class EFCarDal : ICarDal
     {
         public void Add(Car entity)
         {
