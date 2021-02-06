@@ -17,7 +17,12 @@ namespace Business.Concrete
             _carDal = carDal;
         }
 
-        
+        public void Add(Car car)
+        {
+            _carDal.Add(car);
+            Console.WriteLine("Car recorded.");
+        }
+
         public List<Car> GetAll()
         {
             return _carDal.GetAll();
@@ -25,12 +30,12 @@ namespace Business.Concrete
 
         public List<Car> GetCarsByBrandId(int id)
         {
-            return _carDal.GetAll(c => c.BrandId = id);
+            return _carDal.GetAll(p=>p.BrandId == id );
         }
 
         public List<Car> GetCarsByColorId(int id)
         {
-            return _carDal.GetAll(c => c.ColorId = id);
+            return _carDal.GetAll(c => c.ColorId == id);
         }
     }
 }

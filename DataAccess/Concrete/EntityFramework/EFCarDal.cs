@@ -12,19 +12,29 @@ namespace DataAccess.Concrete.EntityFramework
     {
         public void Add(Car entity)
         {
-            throw new NotImplementedException();
+            using (ReCapContext context = new ReCapContext())
+            {
+                var addedEntity = context.Entry(entity);
+                addedEntity.State = EntityState.Added;
+                context.SaveChanges();
+            }
         }
 
         public void Delete(Car entity)
         {
-            throw new NotImplementedException();
+            using (ReCapContext context = new ReCapContext())
+            {
+                var deletedEntity = context.Entry(entity);
+                deletedEntity.State = EntityState.Deleted;
+                context.SaveChanges();
+            }
         }
 
         public Car Get(Expression<Func<Car, bool>> filter)
         {
             using (ReCapContext context = new ReCapContext())
             {
-                return context.Set<Car>().SingleOrDefault(filter);
+                return context.Set<Car>().SingleOrDefault(filter); //tek bir car datası getirecek.
             }
             
         }
@@ -32,7 +42,9 @@ namespace DataAccess.Concrete.EntityFramework
         {
             using (ReCapContext context = new ReCapContext())
             {
-                return filter == null ? context.Set<Car>().ToList() : context.Set<Car>().Where(filter).ToList();
+                return filter == null //filter boş mu? 
+                    ? context.Set<Car>().ToList() //filter boş ise tüm datayı getir.
+                    : context.Set<Car>().Where(filter).ToList(); //değilse filter uygula liste olarak gerir. 
             }
         }
 
@@ -48,7 +60,12 @@ namespace DataAccess.Concrete.EntityFramework
 
         public void Update(Car entity)
         {
-            throw new NotImplementedException();
+            using (ReCapContext context = new ReCapContext())
+            {
+                var updatedEntity = context.Entry(entity);
+                updatedEntity.State = EntityState.Modified;
+                context.SaveChanges();
+            }
         }
     }
 }
