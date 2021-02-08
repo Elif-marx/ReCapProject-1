@@ -10,7 +10,7 @@ namespace ConsoleUI
         static void Main(string[] args)
         {
             CarManager carManager = new CarManager(new EFCarDal());
-
+            
             foreach (var car in carManager.GetAll()) 
             {
                 Console.WriteLine(car.Description);
@@ -28,6 +28,10 @@ namespace ConsoleUI
                 Console.WriteLine(car.Description);
             }
 
+            foreach (var car in carManager.GetProductDetails())
+            {
+                Console.WriteLine(car.Id + " - BrandName: " + car.BrandName + " - ColorName: " + car.ColorName + " - DailyPrice:" + car.DailyPrice + " - ModelYear: " + car.ModelYear + " - Description: " + car.Description);
+            }
 
 
             Console.WriteLine("Araç Kayıt:");

@@ -12,7 +12,7 @@ namespace Core.DataAccess.EntityFramework
         where TContext : DbContext, new()
     {
 
-        public void Ad(TEntity entity)
+        public void Add(TEntity entity)
         {
             using TContext context = new TContext();
             var addedEntity = context.Entry(entity);
@@ -20,10 +20,7 @@ namespace Core.DataAccess.EntityFramework
             context.SaveChanges();
         }
 
-        public void Add(TEntity entity)
-        {
-            throw new NotImplementedException();
-        }
+     
 
         public void Delete(TEntity entity)
         {
