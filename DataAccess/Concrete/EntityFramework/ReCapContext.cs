@@ -9,7 +9,7 @@ namespace DataAccess.Concrete.EntityFramework
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=192.168.16.12; Database=RecapProject; User Id=sa; Password=12345678; MultipleActiveResultSets=true;"); //Trusted_Connetion=false;
+            optionsBuilder.UseSqlServer(@"Server=192.168.16.12; Database=RecapProject; User Id=sa; Password=6ozde123,,; MultipleActiveResultSets=true;"); //Trusted_Connetion=false;
         }
         public DbSet<Car> Cars { get; set; }
         public DbSet<Brand> Brands  { get; set; }
