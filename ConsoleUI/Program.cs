@@ -10,10 +10,8 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            //NewMethod();
-
-            //FirstName,LastName,Email,Password
-
+            //Console.WriteLine("CompanyName: ");
+            //string cCompanyName = Console.ReadLine();
             Console.WriteLine("FirstName: ");
             string cFirstName = Console.ReadLine();
             Console.WriteLine("LastName: ");
@@ -26,12 +24,21 @@ namespace ConsoleUI
                 Console.WriteLine("Email ok");
             else
                 Console.WriteLine("Re Email: ");
-            cEmail = Console.ReadLine();
+                cEmail = Console.ReadLine();
             Console.WriteLine("Password: ");
             string cPassword = Console.ReadLine();
 
             UserManager userManager = new UserManager(new EFUserDal());
-            userManager.Add(new User { FirstName = cFirstName, LastName = cLastName, Email = cEmail, Password = cPassword });
+            userManager.Add(new User {
+                                        FirstName = cFirstName,
+                                        LastName = cLastName,
+                                        Email = cEmail,
+                                        Password = cPassword
+                                      });
+            
+
+            //CustomerManager customerManager = new CustomerManager(new EFCustomerDal());
+            //customerManager.Add(new Customer { CompanyName = cCompanyName });
 
             //RentalManager rentalManager = new RentalManager(new EFRentalDal());
 
