@@ -1,0 +1,49 @@
+﻿-- Create Database ReCapProject; 
+
+Use ReCapProject;
+
+Create table Brands(
+BrandId int identity (1, 1) Primary Key,
+BrandName  nvarchar (250)
+);
+
+Create Table Colors(
+ColorId  int identity (1, 1) Primary Key,
+ColorName  nvarchar (250)
+);
+
+Create Table Cars(
+CarId   int  identity (1, 1) Primary Key,
+CarName nvarchar (250),
+BrandId int,
+ColorId  int,
+ModelYear  nvarchar (250),
+DailyPrice Decimal,
+Description nvarchar (250),
+Foreign Key (BrandId) References Brands (BrandId),
+Foreign Key (ColorId) References Colors (ColorId)
+);
+
+Create Table Users(
+UserId int identity (1, 1) Primary Key,
+FirstName nvarchar(250),
+LastName nvarchar (250),
+Email nvarchar (250),
+"Password" nvarchar (250),
+);
+
+Create Table Customers(
+UserId int identity(1,1) primary key, 
+CompanyName nvarchar (250),
+Foreign Key (UserId) References Users (UserId)
+);
+
+Create Table Rentals(
+RentalId int identity (1,1) Primary Key,
+CarId int ,
+CustomerId int,
+RentDate date not null,
+ReturnDate date,
+Foreign Key (CarId) References Cars (CarId),
+Foreign Key (CustomerId) References Customers (UserId)
+);

@@ -1,4 +1,4 @@
-﻿using core.Entities;
+﻿using Core.Entities;
 using System;
 
 
@@ -7,6 +7,6 @@ namespace Entities.Concrete
     public class Brand:IEntity
     {
         public int BrandId { get; set; }
-        public String BrandName { get; set; }
+        public string BrandName { get; set; }
     }
 }
