@@ -29,6 +29,7 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
+
         [HttpGet("getcarbybrandid")]
         public IActionResult GetCarByBrandId(int id)
         {
@@ -39,6 +40,7 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
+
         [HttpGet("getcarbycolorid")]
         public IActionResult GetCarByColorId(int id)
         {
@@ -49,6 +51,7 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
+
         [HttpGet("getcardetail")]
         public IActionResult GetCarDetail()
         {
@@ -59,6 +62,7 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
+
         [HttpPost("add")]
         public IActionResult Add(Car car)
         {
@@ -79,6 +83,7 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
+
         [HttpPost("update")]
         public IActionResult Update(Car car)
         {
