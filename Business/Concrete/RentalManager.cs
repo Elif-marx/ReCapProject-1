@@ -44,6 +44,19 @@ namespace Business.Concrete
             return new SuccessDataResult<List<RentalDetailDto>>(_rentalDal.GetRentalDetails());
         }
 
+        public IResult Rent(Rental rental)
+        {
+            {
+                if (rental.ReturnDate < DateTime.Now)
+                {
+                    _rentalDal.Add(rental);
+                    return new SuccessResult(Messages.AddedRental);
+                    
+                }
+                return new ErrorResult(Messages.FailedRentalAddOrUpdate);
+            }
+        }
+
         public IResult Update(Rental rental)
         {
             _rentalDal.Update(rental);

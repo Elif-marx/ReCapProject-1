@@ -2,10 +2,12 @@
 using Core.Utilities.Results;
 using Business.Constants;
 using System.Linq;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 
 namespace Business.Concrete{
 
-    public class CarManager : ICarService    {        ICarDal _carDal;        public CarManager(ICarDal carDal)        {            _carDal = carDal;        }        public IResult Add(Car car)        {            if (car.Description.Length < 2)
+    public class CarManager : ICarService    {        ICarDal _carDal;        public CarManager(ICarDal carDal)        {            _carDal = carDal;        }        [ValidationAspect(typeof(CarValidator))]        public IResult Add(Car car)        {            if (car.Description.Length < 2)
             {
                 return new ErrorResult(Messages.CarDescInvalid);//magic string ten kurtulmak için Business.Constants altında Message class oluşturduk.
             }            _carDal.Add(car);            return new SuccessResult(Messages.CarRecorded);            //Console.WriteLine(Messages.CarRecorded);        }

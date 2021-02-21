@@ -36,5 +36,7 @@
         public static string UserUpdated="User Updated";
         public static string UserGetAll="User GetAll";
         public static string UserListed="User Listed";
+        internal static string FailedRentalAddOrUpdate;
+        internal static string AddedRental;
     }
 }
