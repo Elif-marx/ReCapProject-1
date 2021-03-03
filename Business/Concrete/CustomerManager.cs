@@ -39,10 +39,10 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Customer>>(_customerDal.GetAll(), Messages.CustomerGetAll);
         }
 
-        public DataResult<List<CustomerDetailDto>> GetCustomerDetails(int id)
-        {
-            return new SuccessDataResult<List<CustomerDetailDto>>(_customerDal.GetCustomerDetails());
-        }
+        //public DataResult<List<CustomerDetailDto>> GetCustomerDetails(int id)
+        //{
+        //    return new SuccessDataResult<List<CustomerDetailDto>>(_customerDal.GetCustomerDetails());
+        //}
 
         public IResult Update(Customer customer)
         {

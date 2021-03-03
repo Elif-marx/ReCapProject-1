@@ -14,6 +14,6 @@ namespace Business.Abstract
         IResult Update(Rental rental);
         IResult Rent(Rental rental);
 
-        DataResult<List<RentalDetailDto>> GetRentalDetails();
+        //DataResult<List<RentalDetailDto>> GetRentalDetails();
     }
 }

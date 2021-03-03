@@ -1,4 +1,8 @@
-﻿namespace Business.Constants
+﻿using System.Runtime.Serialization;
+using Core.Entities.Concrete;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+
+namespace Business.Constants
 {
     public class Messages
     {
@@ -36,7 +40,24 @@
         public static string UserUpdated="User Updated";
         public static string UserGetAll="User GetAll";
         public static string UserListed="User Listed";
-        internal static string FailedRentalAddOrUpdate;
-        internal static string AddedRental;
+        public static string FailedRentalAddOrUpdate= "Failed Rental Add Or Update";
+        public static string AddedRental= "Added Rental";
+        public static string CarImagesUpdated= "Car Images Updated";
+        public static string CarImagesAdded= "Car Images Added";
+        public static string CarImagesDelete= "Car Images Delete";
+        public static string ImageLimitPerCar= "ImageLimitPerCar";
+        public static string CarImagesServicesAdded= "CarImagesServicesAdded";
+        public static string CarImagesServicesUpdated= "CarImagesServicesAdded";
+        public static string CarImagesServicesDeleted= "CarImagesServicesDeleted";
+        public static string FailAddedImageLimit= "FailAddedImageLimit";
+        public static string CarImageAdded= "Car Image Added";
+        public static string UserRegistered= "User Registered";
+        public static string UserNotFound = "User Not Found";
+        public static string PasswordError = "Password Error";
+        public static string SuccessfulLogin = "Successful Login";
+        public static string UserAlreadyExists = "User Already Exists";
+        public static string AccessTokenCreated = "Access Token Created";
+        public static string AuthorizationDenied= "Authorization Denied";
+        public static ModelStateDictionary NullImagePath;
     }
 }

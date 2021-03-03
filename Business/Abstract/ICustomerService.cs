@@ -11,6 +11,6 @@ namespace Business.Abstract
         IResult Add(Customer customer);
         IResult Delete(Customer customer);
         IResult Update(Customer customer);
-        DataResult<List<CustomerDetailDto>> GetCustomerDetails(int id);
+        //DataResult<List<CustomerDetailDto>> GetCustomerDetails(int id);
     }
 }

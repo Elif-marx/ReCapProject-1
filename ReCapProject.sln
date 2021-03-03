@@ -20,6 +20,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "WebAPI\WebAPI.csproj", "{21715B9C-301F-4556-A91F-68888509EFBA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{1E3B9EE7-23D7-4FBF-BEB5-DCE93BC8F97B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -62,5 +64,8 @@ Global
 		$0.DotNetNamingPolicy = $1
 		$1.DirectoryNamespaceAssociation = PrefixedHierarchical
 		$1.ResourceNamePolicy = MSBuild
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1E3B9EE7-23D7-4FBF-BEB5-DCE93BC8F97B} = {350D7745-DFDA-4ABF-B4A4-FE73B2349F53}
 	EndGlobalSection
 EndGlobal

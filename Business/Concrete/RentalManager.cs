@@ -39,10 +39,10 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Rental>>(_rentalDal.GetAll(), Messages.RentalGetAll);
         }
 
-        public DataResult<List<RentalDetailDto>> GetRentalDetails()
-        {
-            return new SuccessDataResult<List<RentalDetailDto>>(_rentalDal.GetRentalDetails());
-        }
+        //public DataResult<List<RentalDetailDto>> GetRentalDetails()
+        //{
+        //    return new SuccessDataResult<List<RentalDetailDto>>(_rentalDal.GetRentalDetails());
+        //}
 
         public IResult Rent(Rental rental)
         {

@@ -30,16 +30,16 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
-        [HttpGet("getcustomerdetails")]
-        public IActionResult GetCustomerDetail(int id)
-        {
-            var result = _customerService.GetCustomerDetails(id);
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-            return BadRequest(result);
-        }
+        //[HttpGet("getcustomerdetails")]
+        //public IActionResult GetCustomerDetail(int id)
+        //{
+        //    var result = _customerService.GetCustomerDetails(id);
+        //    if (result.Success)
+        //    {
+        //        return Ok(result);
+        //    }
+        //    return BadRequest(result);
+        //}
         [HttpPost("add")]
         public IActionResult Add(Customer customer)
         {
